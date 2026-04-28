@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+  body {
+    @apply bg-background text-on-background font-body min-h-screen flex flex-col;
+  }
+}
+
+.tap-highlight-transparent {
+    -webkit-tap-highlight-color: transparent;
+}
+.pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+}
