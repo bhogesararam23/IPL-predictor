@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "ipl-engine/backend/main.py",
+      "src": "api/index.py",
       "use": "@vercel/python"
     },
     {
@@ -15,16 +15,8 @@
   ],
   "rewrites": [
     {
-      "source": "/simulate",
-      "destination": "/ipl-engine/backend/main.py"
-    },
-    {
-      "source": "/standings",
-      "destination": "/ipl-engine/backend/main.py"
-    },
-    {
-      "source": "/health",
-      "destination": "/ipl-engine/backend/main.py"
+      "source": "/api/(.*)",
+      "destination": "/api/index.py"
     },
     {
       "source": "/assets/(.*)",

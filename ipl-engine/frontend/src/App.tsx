@@ -271,8 +271,9 @@ export default function App() {
     try {
       setIsSimulating(true);
       setError(null);
-      const apiUrl = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:8000' : '');
-      const response = await fetch(`${apiUrl}/simulate?simulations=1000`);
+      const API_URL = "/api/simulate";
+      // Reduced iterations to 500 to ensure it finishes within Vercel's 10s serverless timeout
+      const response = await fetch(`${API_URL}?simulations=500`);
       if (!response.ok) {
         throw new Error('Failed to fetch simulation data');
       }
