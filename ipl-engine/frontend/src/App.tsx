@@ -1,14 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 // --- Types ---
-interface TeamStanding {
-  name: string;
-  matches: number;
-  wins: number;
-  losses: number;
-  points: number;
-  nrr: number;
-}
 
 interface SimulationResult {
   name: string;
@@ -112,7 +104,7 @@ const LiveInsights = ({ teams }: { teams: SimulationResult[] }) => {
         <div className="absolute left-0 top-0 h-full flex flex-col justify-between text-[10px] text-on-surface-variant pb-6 pr-2 text-right w-8">
           <span>100</span><span>75</span><span>50</span><span>25</span><span>0</span>
         </div>
-        {topTeams.map((team, index) => {
+        {topTeams.map((team) => {
           const prob = Math.round(team.top4_probability * 100);
           const meta = getTeamMeta(team.name);
           let barColor = "bg-secondary";
