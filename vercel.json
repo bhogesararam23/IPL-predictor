@@ -2,6 +2,10 @@
   "version": 2,
   "builds": [
     {
+      "src": "ipl-engine/backend/main.py",
+      "use": "@vercel/python"
+    },
+    {
       "src": "ipl-engine/frontend/package.json",
       "use": "@vercel/static-build",
       "config": {
@@ -10,6 +14,18 @@
     }
   ],
   "routes": [
+    {
+      "src": "/simulate",
+      "dest": "ipl-engine/backend/main.py"
+    },
+    {
+      "src": "/standings",
+      "dest": "ipl-engine/backend/main.py"
+    },
+    {
+      "src": "/health",
+      "dest": "ipl-engine/backend/main.py"
+    },
     {
       "handle": "filesystem"
     },

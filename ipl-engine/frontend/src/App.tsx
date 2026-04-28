@@ -279,7 +279,7 @@ export default function App() {
     try {
       setIsSimulating(true);
       setError(null);
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+      const apiUrl = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:8000' : '');
       const response = await fetch(`${apiUrl}/simulate?simulations=1000`);
       if (!response.ok) {
         throw new Error('Failed to fetch simulation data');
