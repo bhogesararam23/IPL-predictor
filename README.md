@@ -128,6 +128,29 @@ The dashboard will be live at `http://localhost:5173`.
 
 ---
 
+## 🌍 Deployment
+
+### Deploying the Backend on Render
+1. Create a new **Web Service** on Render.
+2. Connect your repository.
+3. Configure the following settings:
+   - **Root Directory**: `ipl-engine/backend`
+   - **Environment**: `Python 3`
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+4. Deploy the service and note the `.onrender.com` URL.
+
+### Deploying the Frontend on Vercel
+1. Create a new Project on Vercel.
+2. Connect your repository.
+3. Configure the following settings:
+   - **Framework Preset**: `Vite`
+   - **Root Directory**: `ipl-engine/frontend`
+   - **Environment Variables**: Add `VITE_API_URL` and set its value to your Render backend URL (e.g., `https://your-backend.onrender.com`).
+4. Vercel will automatically build the frontend from `ipl-engine/frontend/package.json` using the `vercel.json` config provided, or natively if you set the Root Directory properly.
+
+---
+
 ## 📝 Future Roadmap
 
 - [ ] Production integration with live APIs replacing HTML scraping.
