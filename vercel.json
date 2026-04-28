@@ -31,7 +31,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/ipl-engine/frontend/dist/index.html"
+      "dest": "/index.html"
     }
   ]
 }
