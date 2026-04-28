@@ -27,11 +27,16 @@
       "dest": "ipl-engine/backend/main.py"
     },
     {
-      "handle": "filesystem"
+      "src": "/assets/(.*)",
+      "dest": "/ipl-engine/frontend/dist/assets/$1"
+    },
+    {
+      "src": "/vite.svg",
+      "dest": "/ipl-engine/frontend/dist/vite.svg"
     },
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "/ipl-engine/frontend/dist/index.html"
     }
   ]
 }
