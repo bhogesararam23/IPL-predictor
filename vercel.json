@@ -13,30 +13,30 @@
       }
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/simulate",
-      "dest": "ipl-engine/backend/main.py"
+      "source": "/simulate",
+      "destination": "/ipl-engine/backend/main.py"
     },
     {
-      "src": "/standings",
-      "dest": "ipl-engine/backend/main.py"
+      "source": "/standings",
+      "destination": "/ipl-engine/backend/main.py"
     },
     {
-      "src": "/health",
-      "dest": "ipl-engine/backend/main.py"
+      "source": "/health",
+      "destination": "/ipl-engine/backend/main.py"
     },
     {
-      "src": "/assets/(.*)",
-      "dest": "/ipl-engine/frontend/dist/assets/$1"
+      "source": "/assets/(.*)",
+      "destination": "/ipl-engine/frontend/assets/$1"
     },
     {
-      "src": "/vite.svg",
-      "dest": "/ipl-engine/frontend/dist/vite.svg"
+      "source": "/vite.svg",
+      "destination": "/ipl-engine/frontend/vite.svg"
     },
     {
-      "src": "/(.*)",
-      "dest": "/ipl-engine/frontend/dist/index.html"
+      "source": "/(.*)",
+      "destination": "/ipl-engine/frontend/index.html"
     }
   ]
 }
